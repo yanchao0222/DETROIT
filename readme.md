@@ -25,7 +25,6 @@ This repository contains the code in **PyTorch** (0.4.1) for our method of imput
 ## Framework
 Achieving the missing value imputation by our imputor consists of three main parts: **1) prefill**, **2) train a deep regressor**, and **3) apply**.
 
-It should be noted that before running any of the source code, please copy the two provided data folders "train_groundtruth" and "train_with_missing" under the folder `./train_and_evaluate_with_training_data/`.
 
 ### Prefill
 A wide variaty of techniques have been developed to address the imputation problem of missing values. We tested multiple existing methods to prefill the missing data, which will be leveraged for model training. The tentative methods included filling with mean, k-nearest neighbors (KNN), multiple imputations with chained equations (MICE), and matrix completion. By comparing the imputed values with ground truth values, we observed that filling with the local mean had better imputing performance on labs PCL, PLCO2, MCV, PLT, WBC, RDW, PBUN and PCRE. In contrast, the labs PK, PNA, HCT, HGB, and PGLU can be better imputed using matrix completion (softImpute), which is based on 
